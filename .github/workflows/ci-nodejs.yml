@@ -1,0 +1,20 @@
+name: ci
+on:
+ workflow_dispatch:
+
+ jobs: 
+  files:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Check out the repo
+     uses: https://github.com/PXL-2TIN-DevOps-Resources/calculator-app-finished
+
+  -  name: Node.js installeren
+     run: sudo apt install nodejs
+
+  - name: dependencies installeren
+    run: sudo apt install nmp
+
+  - name: unittests
+    run: mvn test
+

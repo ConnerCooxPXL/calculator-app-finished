@@ -20,7 +20,6 @@ jobs:
    - name: Verification
      run: ls -alhR
 
-
    - name: Zip
      uses: actions/upload-artifact@v4
      with: 

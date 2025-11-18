@@ -1,4 +1,8 @@
 name: Checkout Example
+on:
+ push:
+  branches:
+   - main
 
 jobs:
  build:

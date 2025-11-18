@@ -1,9 +1,14 @@
 name: ci
 on:
- workflow_dispatch:
+ push:
+  branches:
+   - main
+
+ pull:
+  types: [opened, reopened]
 
  jobs: 
-  files:
+  build:
   runs-on: ubuntu-latest
   steps:
    - name: Check out the repo

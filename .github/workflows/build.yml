@@ -20,5 +20,8 @@ jobs:
    - name: Zip
      uses: actions/upload-artifact@v4
      with: 
-      name: Zip
+      name: Zipfile
+      path: |
+        target/*.jar
+
       

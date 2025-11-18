@@ -19,7 +19,7 @@ jobs:
       node-version: '20'
 
    - name: dependencies installeren
-     run: nmp install
+     run: npm install
 
    - name: unittests
      run: mpn test

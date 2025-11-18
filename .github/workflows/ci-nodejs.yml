@@ -26,3 +26,4 @@ jobs:
 
    - name: Coverage Rapport
      uses: mridang/action-test-reporter@v1.7.0
+     coverage-file: ./coverage/clover.xml

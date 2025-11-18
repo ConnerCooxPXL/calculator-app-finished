@@ -22,7 +22,7 @@ jobs:
      run: npm install
 
    - name: unittests
-     run: npm test
+     run: npm test -- --coverage
 
    - name: Coverage Rapport
      uses: mridang/action-test-reporter@v1.7.0

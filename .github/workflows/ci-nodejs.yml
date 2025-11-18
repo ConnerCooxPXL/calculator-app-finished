@@ -7,23 +7,23 @@ on:
  pull:
   types: [opened, reopened]
 
- jobs: 
-  build:
+jobs: 
+ build:
   runs-on: ubuntu-latest
   steps:
    - name: Check out the repo
      uses: actions/checkout@v2
 
-  -  name: Node.js installeren
+   - name: Node.js installeren
      uses: actions/setup-node@v4
      with: 
       node-version: '20'
 
-  - name: dependencies installeren
-    run: nmp install
+   - name: dependencies installeren
+     run: nmp install
 
-  - name: unittests
-    run: mpn test
+   - name: unittests
+     run: mpn test
 
-  - name: Coverage Rapport
-    uses: mridang/action-test-reporter@v1.7.0
+   - name: Coverage Rapport
+     uses: mridang/action-test-reporter@v1.7.0

@@ -23,6 +23,6 @@ jobs:
       name: Zipfile
       path: |
         app.js
-        node_modules
+        !node_modules
 
       

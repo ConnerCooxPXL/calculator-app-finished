@@ -39,9 +39,6 @@ jobs:
       coverage-file: ./coverage/clover.xml
       working-directory: ./
 
-   - name: Setup docker environment
-     uses: actions/setup-docker@v4.4.0
-
    - name: Login to DockerHub
      uses: docker/login-action@v3
      with:

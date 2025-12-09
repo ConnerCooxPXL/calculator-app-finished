@@ -28,6 +28,6 @@ jobs:
         docker pull conncoox3/calculator-app:latest
 
         echo "Starting container..."
-        docker run -d --name calculator-app -p 80:80 conncoox3/calculator-app:latest
+        docker run -d --name calculator-app -p 3000:3000 conncoox3/calculator-app:latest
 
      

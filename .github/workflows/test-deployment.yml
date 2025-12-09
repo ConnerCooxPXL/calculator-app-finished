@@ -1,0 +1,33 @@
+name: Test deployement
+on:
+ push:
+  branches:
+   - main
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout repository
+     uses: actions/checkout@v3
+  - name: Checkout repository
+        uses: actions/checkout@v3
+
+  - name: Connect to EC2 and deploy container
+    uses: appleboy/ssh-action@v1.0.3
+    with:
+      host: ${{ secrets.EC2_HOST }}
+      username: ${{ secrets.EC2_USER }}
+      key: ${{ secrets.EC2_SSH_KEY }}
+      script: |
+        echo "Stopping old containers..."
+        docker stop calculator-app || true
+        docker rm calculator-app || true
+
+        echo "Pulling latest image..."
+        docker pull conncoox3/calculator-app:latest
+
+        echo "Starting container..."
+        docker run -d --name calculator-app -p 80:80 conncoox3/calculator-app:latest
+
+     
